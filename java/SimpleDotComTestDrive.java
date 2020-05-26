@@ -1,7 +1,7 @@
 public class SimpleDotComTestDrive {
 
-    public static main name(String[] args) {
-        SimpleDotcom dot = new SimpleDotCom();
+    public static void main (String[] args) {
+        SimpleDotCom dot = new SimpleDotCom();
         int[] locations = {2, 3, 4};
         dot.setLocationCells(locations);
         String userGuess = "2";
@@ -10,9 +10,10 @@ public class SimpleDotComTestDrive {
 }
 
 
+    
 
-public class SimpleDotcom {
-    int[] setLocationCells;
+ class SimpleDotCom {
+    int[] locationCells;
     int numOfHits = 0;
 
     public void setLocationCells(int[] locs) {
@@ -20,10 +21,10 @@ public class SimpleDotcom {
         
     }
 
-    public String checkYouself(String stringGuess) {
-        int guess = Inter.parseInt(stringGuess);
+    public String checkYourself(String stringGuess) {
+        int guess = Integer.parseInt(stringGuess);
         String result = "miss";
-        for(in cell : locationCells) {
+        for(int cell : locationCells) {
             if(guess == cell) {
                 result = "hit";
                 numOfHits++;
@@ -31,7 +32,7 @@ public class SimpleDotcom {
             }
         }
 
-        if(numOfHits == locationCells.lenght) {
+        if(numOfHits == locationCells.length) {
             result = "kill";
         }
         System.out.println(result);
